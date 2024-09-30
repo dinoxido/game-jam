@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chij1ufhyefvy"]
+
+[ext_resource type="Texture2D" uid="uid://uxdrt0ui4yld" path="res://Art Assets/Characters/Duck/pixilart-sprite.png" id="1_cl3ap"]
+[ext_resource type="Script" path="res://script/character_body_2d.gd" id="1_ihagh"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(2.08, 1.64)
+script = ExtResource("1_ihagh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cl3ap")
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11, -4, 15, 3, 11, 14, 27, 23, 26, 48, 13, 50, -13, 50, -24, 50, -28, 46, -20, 19, -7, 14, -7, 14, -9, 1, -1, -7)
