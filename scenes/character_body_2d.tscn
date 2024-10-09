@@ -1,7 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://chij1ufhyefvy"]
+[gd_scene load_steps=9 format=3 uid="uid://chij1ufhyefvy"]
 
 [ext_resource type="Texture2D" uid="uid://uxdrt0ui4yld" path="res://Art Assets/Characters/Duck/pixilart-sprite.png" id="1_cl3ap"]
 [ext_resource type="Script" path="res://script/character_body_2d.gd" id="1_ihagh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01bbi"]
+atlas = ExtResource("1_cl3ap")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1xvy"]
+atlas = ExtResource("1_cl3ap")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cst8"]
+atlas = ExtResource("1_cl3ap")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7glr"]
+atlas = ExtResource("1_cl3ap")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s31k"]
+atlas = ExtResource("1_cl3ap")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dljvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01bbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1xvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cst8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7glr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s31k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(2.08, 1.64)
@@ -13,3 +56,7 @@ hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(11, -4, 15, 3, 11, 14, 27, 23, 26, 48, 13, 50, -13, 50, -24, 50, -28, 46, -20, 19, -7, 14, -7, 14, -9, 1, -1, -7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dljvm")
+frame_progress = 0.341223
